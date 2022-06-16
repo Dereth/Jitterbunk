@@ -1,0 +1,11 @@
+<h1>Welcome to Jitterbunk!</h1>
+<a href="{% url 'bunky:find' %}">Log in</a><br>
+{% if latest_bunks_list %}
+<ul>
+	{% for bunk in latest_bunks_list %}
+	<li>{{ bunk.from_user.username }} bunk'd {{ bunk.to_user.username }} on {{ bunk.time }}!</li>
+	{% endfor %}
+</ul>
+{% else %}
+<p>There hasn't been a SINGLE bunk EVER!</p>
+{% endif %}

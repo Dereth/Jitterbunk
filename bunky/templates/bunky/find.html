@@ -1,0 +1,13 @@
+<h1>Enter your username</h1>
+
+{% if error_message %}
+<script>
+	alert('{{ error_message }}')
+</script>
+{% endif %}
+
+<form action="{% url 'bunky:find' %}" method="post">
+	{% csrf_token %}
+	<input type="text" name="username" id="username"><br><br>
+	<input type="submit" value="Find">
+</form>

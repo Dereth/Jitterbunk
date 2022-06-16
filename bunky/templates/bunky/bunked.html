@@ -1,0 +1,7 @@
+<h1>You have successfully bunked {{ bunk.to_user.username }}!</h1>
+
+<a>{{ bunk.to_user.username }}'s profile:</a><br>
+<img src="{{ bunk.to_user.photo }}" height = 150><br><br>
+
+<a href="{% url 'bunky:bunk' bunk.from_user.id %}">Bunk again</a><br>
+<a href="{% url 'bunky:home' bunk.from_user.id %}">Home</a>

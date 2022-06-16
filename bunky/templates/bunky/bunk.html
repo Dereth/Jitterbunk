@@ -1,0 +1,15 @@
+<h1>Bunk a User!</h1>
+
+{% if error_message %}
+<script>
+	alert('{{ error_message }}')
+</script>
+{% endif %}
+
+<a href="{% url 'bunky:home' user.id %}">Home</a><br><br>
+
+<form action="{% url 'bunky:bunk' user.id %}" method="post">
+	{% csrf_token %}
+	<input type="text" name="username" id="username"><br><br>
+	<input type="submit" value="Bunk!">
+</form>

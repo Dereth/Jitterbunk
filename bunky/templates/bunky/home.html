@@ -1,0 +1,13 @@
+<h1>{{ user.username }}'s Homepage</h1>
+
+<img src="{{ user.photo }}" height=200><br><br>
+
+<a href="{% url 'bunky:main' %}">Back</a><br>
+<a href="{% url 'bunky:bunk' user.id %}">Bunk Someone?</a><br>
+<ul>
+	{% for bunk in bunks %}
+	<li>
+		{{ bunk.from_user.username }} bunk'd {{ bunk.to_user.username }} on {{ bunk.time }}!
+	</li>
+	{% endfor %}
+</ul>
